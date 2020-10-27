@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/accounts-payable/accounts-payable.iml" filepath="$PROJECT_DIR$/accounts-payable/accounts-payable.iml" />
+      <module fileurl="file://$PROJECT_DIR$/accounts-receivable/accounts-receivable.iml" filepath="$PROJECT_DIR$/accounts-receivable/accounts-receivable.iml" />
+      <module fileurl="file://$PROJECT_DIR$/accounts-payable/adapters/adapters.iml" filepath="$PROJECT_DIR$/accounts-payable/adapters/adapters.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libs/api-commons/api-commons.iml" filepath="$PROJECT_DIR$/libs/api-commons/api-commons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cash-flow/cash-flow.iml" filepath="$PROJECT_DIR$/cash-flow/cash-flow.iml" />
+      <module fileurl="file://$PROJECT_DIR$/accounts-payable/core/core.iml" filepath="$PROJECT_DIR$/accounts-payable/core/core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/finacial-system-poc.iml" filepath="$PROJECT_DIR$/finacial-system-poc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/accounts-payable/infrastructure/infrastructure.iml" filepath="$PROJECT_DIR$/accounts-payable/infrastructure/infrastructure.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libs/libs.iml" filepath="$PROJECT_DIR$/libs/libs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libs/usecase-commons/usecase-commons.iml" filepath="$PROJECT_DIR$/libs/usecase-commons/usecase-commons.iml" />
+    </modules>
+  </component>
+</project>
