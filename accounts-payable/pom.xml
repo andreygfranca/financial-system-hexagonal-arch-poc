@@ -4,9 +4,10 @@
 	<modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
     <modules>
-        <module>core</module>
-		<module>adapters</module>
-		<module>infrastructure</module>
+        <module>accounts-payable-core</module>
+		<module>accounts-payable-adapters</module>
+		<module>accounts-payable-infrastructure</module>
+		<module>accounts-payable-bootloader</module>
     </modules>
 
 	<parent>
@@ -24,6 +25,7 @@
 
 	<properties>
 		<java.version>11</java.version>
+		<io.springfox.swagger2.version>2.9.2</io.springfox.swagger2.version>
 	</properties>
 
 	<dependencies>
@@ -39,6 +41,17 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>${io.springfox.swagger2.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>${io.springfox.swagger2.version}</version>
 		</dependency>
 
         <!-- Test Dependencies -->
