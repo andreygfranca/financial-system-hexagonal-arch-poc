@@ -1,4 +1,4 @@
-package com.github.andreygfranca.accountspayable.ports.repository;
+package com.github.andreygfranca.accountspayable.persistence;
 
 import java.util.UUID;
 
@@ -11,5 +11,5 @@ import com.github.andreygfranca.accountspayable.domain.Settlement;
  * @author Andrey Franca 
  */
 @Repository
-public interface SettlementRepository extends JpaRepository<Settlement, UUID> {
+public interface SpringDataSettlementRepository extends JpaRepository<Settlement, UUID> {
 }

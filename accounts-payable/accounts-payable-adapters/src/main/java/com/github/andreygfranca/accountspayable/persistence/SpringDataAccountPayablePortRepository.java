@@ -1,4 +1,4 @@
-package com.github.andreygfranca.accountspayable.ports.repository;
+package com.github.andreygfranca.accountspayable.persistence;
 
 import java.util.UUID;
 
@@ -11,5 +11,5 @@ import com.github.andreygfranca.accountspayable.domain.AccountPayable;
  * @author Andrey Franca 
  */
 @Repository
-public interface AccountPayableRepository extends JpaRepository<AccountPayable, UUID> {
+public interface SpringDataAccountPayablePortRepository extends JpaRepository<AccountPayable, UUID> {
 }

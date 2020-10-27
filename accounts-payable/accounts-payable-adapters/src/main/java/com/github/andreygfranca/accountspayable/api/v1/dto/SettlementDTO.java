@@ -12,7 +12,6 @@ public class SettlementDTO {
 
     private String id;
     private BigDecimal value;
-    private AccountPayableDTO accountPayable;
 
     public String getId() {
         return id;
@@ -28,13 +27,5 @@ public class SettlementDTO {
 
     public void setValue(BigDecimal value) {
         this.value = value;
-    }
-
-    public AccountPayableDTO getAccountPayable() {
-        return accountPayable;
-    }
-
-    public void setAccountPayable(AccountPayableDTO accountPayable) {
-        this.accountPayable = accountPayable;
     }
 }

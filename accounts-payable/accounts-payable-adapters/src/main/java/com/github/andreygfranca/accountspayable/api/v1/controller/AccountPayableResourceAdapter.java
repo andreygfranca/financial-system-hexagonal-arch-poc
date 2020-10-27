@@ -1,5 +1,7 @@
 package com.github.andreygfranca.accountspayable.api.v1.controller;
 
+import java.util.UUID;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,8 +16,7 @@ import com.github.andreygfranca.accountspayable.api.v1.dto.SettlementDTO;
 import com.github.andreygfranca.accountspayable.api.v1.mapper.AccountPayableMapper;
 import com.github.andreygfranca.accountspayable.domain.AccountPayable;
 import com.github.andreygfranca.accountspayable.domain.Settlement;
-import com.github.andreygfranca.accountspayable.ports.usecase.CreateAccountPayableUseCase;
-import com.github.andreygfranca.accountspayable.ports.usecase.SettleAccountPayableUseCase;
+import com.github.andreygfranca.accountspayable.services.AccountPayableService;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -31,13 +32,10 @@ public class AccountPayableResourceAdapter {
 
     private static final AccountPayableMapper MAPPER = new AccountPayableMapper();
 
-    private CreateAccountPayableUseCase createAccountPayableUseCase;
-    private SettleAccountPayableUseCase settleAccountPayableUseCase;
+    private AccountPayableService accountPayableService;
 
-    public AccountPayableResourceAdapter(CreateAccountPayableUseCase createAccountPayableUseCase,
-                                         SettleAccountPayableUseCase settleAccountPayableUseCase) {
-        this.createAccountPayableUseCase = createAccountPayableUseCase;
-        this.settleAccountPayableUseCase = settleAccountPayableUseCase;
+    public AccountPayableResourceAdapter(AccountPayableService accountPayableService) {
+        this.accountPayableService = accountPayableService;
     }
 
     @ApiOperation(value = "Create a new accounts payable")
@@ -46,7 +44,7 @@ public class AccountPayableResourceAdapter {
             @ApiParam(value = "Account Payable") @RequestBody AccountPayableDTO accountPayableDTO) {
         var input = MAPPER.map(accountPayableDTO, AccountPayable.class);
 
-        var output = createAccountPayableUseCase.execute(input);
+        var output = accountPayableService.create(input);
 
         return ResponseEntity
                 .status(HttpStatus.CREATED)
@@ -60,7 +58,7 @@ public class AccountPayableResourceAdapter {
             @ApiParam(value = "Settlement's information") @RequestBody SettlementDTO settlementDTO) {
         var input = MAPPER.map(settlementDTO, Settlement.class);
 
-        Settlement output = settleAccountPayableUseCase.execute(input);
+        var output = accountPayableService.settle(UUID.fromString(id), input);
 
         return ResponseEntity
                 .status(HttpStatus.CREATED)
