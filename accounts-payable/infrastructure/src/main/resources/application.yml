@@ -1,2 +1,10 @@
 server:
   port: 7171
+
+# Messaging queues properties
+messaging:
+  cash-flow:
+    exchange: cash-flow.exchange
+    queue: cash-flow.queue
+    routingKey: cash-flow.routingKey
+

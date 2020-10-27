@@ -36,6 +36,7 @@ class CreateAccountPayableUseCaseTest {
     @DisplayName("When create a Account Payable then assert was created")
     @Test
     public void testCreateAccountPayable() {
+        // Arrange
         var accountPayable = AccountPayableBuilder
                 .anAccountPayable()
                 .withId(UUID.randomUUID())
@@ -44,8 +45,10 @@ class CreateAccountPayableUseCaseTest {
                 .build();
         when(repository.save(accountPayable)).thenReturn(accountPayable);
 
+        // Act
         var accountPayablePersisted = useCase.execute(accountPayable);
 
+        // Assert
         assertThat(accountPayable).isEqualToComparingFieldByField(accountPayablePersisted);
     }
 

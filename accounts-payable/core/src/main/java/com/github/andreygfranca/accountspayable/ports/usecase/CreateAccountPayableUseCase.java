@@ -1,8 +1,5 @@
 package com.github.andreygfranca.accountspayable.ports.usecase;
 
-import java.math.BigDecimal;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
