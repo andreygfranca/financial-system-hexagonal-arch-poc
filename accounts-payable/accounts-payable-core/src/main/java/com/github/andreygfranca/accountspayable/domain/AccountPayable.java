@@ -41,7 +41,7 @@ public class AccountPayable {
     @Column(name = "ds_observation")
     private String observation;
 
-    @OneToMany(mappedBy = "accountPayableId")
+    @OneToMany(mappedBy = "accountPayable")
     private List<Settlement> settlement = new ArrayList<>();
 
     public UUID getId() {

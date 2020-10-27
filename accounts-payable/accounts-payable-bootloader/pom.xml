@@ -11,6 +11,19 @@
 
     <artifactId>accounts-payable-bootloader</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.github.andreygfranca</groupId>
+            <artifactId>accounts-payable-adapters</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.andreygfranca</groupId>
+            <artifactId>infrastructure</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
     <build>
         <plugins>
             <plugin>

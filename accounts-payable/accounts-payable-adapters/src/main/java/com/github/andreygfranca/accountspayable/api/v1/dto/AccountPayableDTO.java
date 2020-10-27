@@ -17,12 +17,6 @@ public class AccountPayableDTO {
     private LocalDate maturityDate;
     private String observation;
 
-    public AccountPayableDTO(String id, String type, BigDecimal value) {
-        this.id = id;
-        this.type = type;
-        this.value = value;
-    }
-
     public String getId() {
         return id;
     }

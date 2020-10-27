@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>adapters</artifactId>
+    <artifactId>accounts-payable-adapters</artifactId>
 
     <properties>
         <java.version>11</java.version>
