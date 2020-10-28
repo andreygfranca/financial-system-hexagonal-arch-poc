@@ -32,7 +32,7 @@ public class AccountPayableResourceAdapter {
 
     private static final AccountPayableMapper MAPPER = new AccountPayableMapper();
 
-    private AccountPayableService accountPayableService;
+    private final AccountPayableService accountPayableService;
 
     public AccountPayableResourceAdapter(AccountPayableService accountPayableService) {
         this.accountPayableService = accountPayableService;

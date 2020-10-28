@@ -14,7 +14,6 @@
         <module>accounts-receivable</module>
         <module>cash-flow</module>
         <module>libs</module>
-        <module>accounts-payable-bootloader</module>
     </modules>
 
     <properties>

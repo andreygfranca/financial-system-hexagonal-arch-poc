@@ -13,6 +13,7 @@ import com.github.andreygfranca.accountspayable.ports.in.SettleAccountPayableUse
 import com.github.andreygfranca.accountspayable.ports.out.CreateAccountPayablePort;
 import com.github.andreygfranca.accountspayable.ports.out.CreateSettlementPort;
 import com.github.andreygfranca.accountspayable.ports.out.LoadAccountPayablePort;
+import com.github.andreygfranca.accountspayable.ports.out.PublishSettlementToCashFlow;
 
 /**
  * @author Andrey Franca 
@@ -20,14 +21,16 @@ import com.github.andreygfranca.accountspayable.ports.out.LoadAccountPayablePort
 @Service
 public class AccountPayableService implements CreateAccountPayableUseCase, SettleAccountPayableUseCase {
 
-    private LoadAccountPayablePort loadAccountPayablePort;
-    private CreateAccountPayablePort createAccountPayablePort;
-    private CreateSettlementPort createSettlementPort;
+    private final LoadAccountPayablePort loadAccountPayablePort;
+    private final CreateAccountPayablePort createAccountPayablePort;
+    private final CreateSettlementPort createSettlementPort;
+    private final PublishSettlementToCashFlow publishSettlementToCashFlow;
 
-    public AccountPayableService(LoadAccountPayablePort loadAccountPayablePort, CreateAccountPayablePort createAccountPayablePort, CreateSettlementPort createSettlementPort) {
+    public AccountPayableService(LoadAccountPayablePort loadAccountPayablePort, CreateAccountPayablePort createAccountPayablePort, CreateSettlementPort createSettlementPort, PublishSettlementToCashFlow publishSettlementToCashFlow) {
         this.loadAccountPayablePort = loadAccountPayablePort;
         this.createAccountPayablePort = createAccountPayablePort;
         this.createSettlementPort = createSettlementPort;
+        this.publishSettlementToCashFlow = publishSettlementToCashFlow;
     }
 
     @Override
@@ -45,13 +48,13 @@ public class AccountPayableService implements CreateAccountPayableUseCase, Settl
 
         Settlement settlementCreated = createSettlementPort.create(settlement);
 
-        afterCreate();
+        afterCreate(settlementCreated);
 
         return settlementCreated;
     }
 
-    private void afterCreate() {
-        //TODO publish event
+    private void afterCreate(Settlement settlement) {
+        publishSettlementToCashFlow.publish(settlement);
     }
 
     private void beforeCreate(Optional<AccountPayable> accountPayable) {
