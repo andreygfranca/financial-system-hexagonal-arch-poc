@@ -1,4 +1,4 @@
-package com.github.andreygfranca.accountspayable.messaging.dto;
+package com.github.andreygfranca.accountspayable.broker.dto;
 
 import java.math.BigDecimal;
 

@@ -1,4 +1,4 @@
-package com.github.andreygfranca.accountspayable.messaging;
+package com.github.andreygfranca.accountspayable.broker.publishers;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import com.github.andreygfranca.accountspayable.domain.Settlement;
-import com.github.andreygfranca.accountspayable.messaging.dto.SettlementDTO;
+import com.github.andreygfranca.accountspayable.broker.dto.SettlementDTO;
 import com.github.andreygfranca.accountspayable.ports.out.PublishSettlementToCashFlow;
 
 /**

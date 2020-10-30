@@ -1,0 +1,22 @@
+version: '3'
+services:
+  accounts-payable:
+    image: andreygfranca/accounts-payable
+    ports:
+      - "7171:7171"
+  cash-flow:
+    image: andreygfranca/cash-flow
+    ports:
+      - "7172:7172"
+  rabbitmq:
+    image: rabbitmq:3.8-management
+    container_name: rabbitmq-service
+    volumes:
+      - ./.docker/rabbitmq/data/:/var/lib/rabbitmq/
+    environment:
+      RABBITMQ_ERLANG_COOKIE: ${RABBITMQ_ERLANG_COOKIE}
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    ports:
+      - 5672:5672
+      - 15672:15672

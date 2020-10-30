@@ -11,6 +11,14 @@
 
     <groupId>com.github.andreygfranca.cash-flow</groupId>
     <artifactId>cash-flow-adapters</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>com.github.andreygfranca.cash-flow</groupId>
+            <artifactId>cash-flow-core</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
 
 
 </project>
