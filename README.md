@@ -18,5 +18,5 @@ cd docker && make build:latest
 After build all microservices you have can run it, all together.
 ```bash
 cd docker;
-docker-compose docker-compose -f docker-compose.yml up
+docker-compose -f docker-compose.yml up
 ```
