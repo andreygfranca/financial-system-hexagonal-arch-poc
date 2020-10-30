@@ -4,7 +4,7 @@ VERSION ?= $(shell git describe --tags --abbrev=0)
 IMAGE ?= andreygfranca/accounts-payable
 ROOTPATH ?= $(shell git rev-parse --show-toplevel)
 TMP_DIR := "$(shell mktemp -d $(ROOTPATH)/accounts-payable/tmp.build.XXXXXXXXXX)"
-ARTIFACTS ?= "$(shell git rev-parse --show-toplevel)/accounts-payable/accounts-payable-bootloader/target/accounts-payable-bootloader-0.0.1-SNAPSHOT.jar"
+ARTIFACTS ?= "$(shell git rev-parse --show-toplevel)/accounts-payable/accounts-payable-bootloader/target/accounts-payable.jar"
 DOCKERPATH ?= "$(shell git rev-parse --show-toplevel)/accounts-payable/docker"
 BRANCH ?= $(shell git name-rev --name-only HEAD)
 

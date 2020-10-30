@@ -5,7 +5,10 @@
     <packaging>pom</packaging>
     <modules>
         <module>cash-flow-core</module>
-    </modules>
+        <module>cash-flow-adapters</module>
+		<module>cash-flow-infrastructure</module>
+		<module>cash-flow-bootloader</module>
+	</modules>
     <parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
