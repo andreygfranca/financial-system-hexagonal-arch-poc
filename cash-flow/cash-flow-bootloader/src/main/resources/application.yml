@@ -9,12 +9,13 @@ spring:
     password: guest
 
   datasource:
-    driverClassName: org.h2.Driver
-    password:
-    url: jdbc:h2:mem:cashflow_db
-    username: sa
-  h2:
-    console:
-      enabled: true
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
   jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    format-sql: true
+    hibernate:
+      ddl-auto: validate
+      dialect: ${SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT}

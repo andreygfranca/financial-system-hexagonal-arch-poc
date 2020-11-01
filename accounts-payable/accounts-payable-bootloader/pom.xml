@@ -19,6 +19,11 @@
         </dependency>
         <dependency>
             <groupId>com.github.andreygfranca</groupId>
+            <artifactId>accounts-payable-core</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.andreygfranca</groupId>
             <artifactId>infrastructure</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>

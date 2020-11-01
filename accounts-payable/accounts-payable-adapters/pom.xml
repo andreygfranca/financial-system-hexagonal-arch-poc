@@ -17,7 +17,7 @@
     <dependencies>
         <dependency>
             <groupId>com.github.andreygfranca</groupId>
-            <artifactId>core</artifactId>
+            <artifactId>accounts-payable-core</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>

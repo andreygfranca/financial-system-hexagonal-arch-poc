@@ -1,0 +1,2 @@
+CREATE DATABASE IF NOT EXISTS `accounts_payable`;
+CREATE DATABASE IF NOT EXISTS `cash_flow`;

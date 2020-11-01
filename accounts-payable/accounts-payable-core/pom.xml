@@ -9,19 +9,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>core</artifactId>
+    <artifactId>accounts-payable-core</artifactId>
 
     <properties>
         <java.version>11</java.version>
     </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>com.github.andreygfranca</groupId>
-            <artifactId>usecase-commons</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-    </dependencies>
-
 
 </project>

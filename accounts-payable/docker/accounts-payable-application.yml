@@ -2,13 +2,24 @@ version: '3'
 services:
   accounts-payable:
     image: andreygfranca/accounts-payable
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mariadb://mariadb/accounts_payable
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=mariadb
+      - SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT=org.hibernate.dialect.MariaDBDialect
     ports:
       - "7171:7171"
+    depends_on:
+      - mariadb
+      - rabbitmq
+    networks:
+      - mariadb
+
   rabbitmq:
     image: rabbitmq:3.8-management
     container_name: rabbitmq-service
     volumes:
-      - ./.docker/rabbitmq/data/:/var/lib/rabbitmq/
+      - /opt/docker/rabbitmq/data/:/var/lib/rabbitmq/
     environment:
       RABBITMQ_ERLANG_COOKIE: ${RABBITMQ_ERLANG_COOKIE}
       RABBITMQ_DEFAULT_USER: guest
@@ -16,3 +27,21 @@ services:
     ports:
       - 5672:5672
       - 15672:15672
+    networks:
+      - mariadb
+
+  mariadb:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: "mariadb"
+      MYSQL_USER: "mariadb"
+      MYSQL_PASSWORD: "mariadb"
+      MYSQL_DATABASE: "accounts_payable"
+    ports:
+    - 3306:3306
+    networks:
+      - mariadb
+
+networks:
+  mariadb:
+    driver: bridge
